@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        #predictionResult {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #uploadedImage {
+            max-width: 100%; /* Ensure the image doesn't exceed its container width */
+            height: auto;
+            border: 1px solid #ff7777; /* Add a border for clarity */
+            margin-top: 10px;
+        }
+
+        #predictionText {
+            color: #0066cc; /* Set a color for the prediction text */
+        }
+    </style>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <h1>Pneumonia Detection</h1>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+        <button type="button" onclick="uploadAndPredict()">Upload and Predict</button>
+    </form>
+
+    <div id="predictionResult">
+        <h2 id="predictionText"></h2>
+        <img id="uploadedImage" alt="Uploaded Image">
+    </div>
+
+    <script>
+        function uploadAndPredict() {
+            var formData = new FormData($('#uploadForm')[0]);
+
+            $.ajax({
+                type: 'POST',
+                url: '/',  // Change this to the correct route
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    // Update the prediction and image on the same page
+                    $('#predictionText').text('Prediction: ' + data.prediction);
+                    $('#uploadedImage').attr('src', 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\static\\uploads\\' + data.filename);
+                    $('#predictionResult').show();
+                },
+                error: function (error) {
+                    console.log('Error:', error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
