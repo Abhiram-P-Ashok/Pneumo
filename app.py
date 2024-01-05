@@ -13,14 +13,16 @@ app = Flask(__name__)
 # Load the model and other necessary configurations here
 def load_model():
     # Load model architecture from JSON
-    json_file_path = 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Dense_classifier.json'
+    #json_file_path = 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Dense_classifier.json'
+    json_file_path = 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Pneumo\\Dense_classifier.json'
     json_file = open(json_file_path, 'r')
     loaded_model_json = json_file.read()
     json_file.close()
     loaded_model = model_from_json(loaded_model_json)
 
     # Load weights into the model
-    loaded_model.load_weights('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Dense_classifier_weights.h5')
+    #loaded_model.load_weights('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Dense_classifier_weights.h5')
+    loaded_model.load_weights('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Pneumo\\Dense_classifier_weights.h5')
     return loaded_model
 
 class_names = ['Bacterial Pneumonia', 'Normal', 'Viral Pneumonia']
