@@ -51,15 +51,13 @@
             <div class="col-lg-8 mx-auto">
                 <h1>GO BOLDLY</h1>
                 <p>Detecting pneumonia early is your ticket to resilience. Recognize the signs, seize control, and embark on your journey to recovery. Your body communicates—listen, act, and let early detection be the spark for your wellness journey. Face the challenge, armed with knowledge and determination. Cherish your health, protect it, and thrive.</p>
-                <button class="btn btn-primary btn-lg btn-default" type="submit">UPLOAD THE X-Ray</button>
-                <button class="btn btn-primary btn-lg btn-default" type="button">PREDICT</button>
                 <form id="uploadForm" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
-                    <button type="button" onclick="uploadAndPredict()">PREDICT</button>
+                    <button class="btn btn-primary btn-lg btn-default" type="button" onclick="uploadAndPredict()">PREDICT</button>
+                    <input class="btn btn-primary btn-lg btn-default" type="file" name="file" accept=".jpg, .jpeg, .png" required>
                 </form>
             
                 <div id="predictionResult">
-                    <h2 id="predictionText"></h2>
+                    <h2 id="predictionText" style="color: rgb(66, 220, 163);"></h2>
                     <img id="uploadedImage" alt="Uploaded Image" width=500px height=600px>
                 </div>
             </div>
