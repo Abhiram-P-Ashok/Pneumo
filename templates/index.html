@@ -5,37 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        form {
-            margin-bottom: 20px;
-        }
-
-        #predictionResult {
-            display: none;
-            margin-top: 20px;
-        }
-
-        #uploadedImage {
-            max-width: 100%; /* Ensure the image doesn't exceed its container width */
-            height: 100%;
-            border: 1px solid #ff7777; /* Add a border for clarity */
-            margin-top: 10px;
-        }
-
-        #predictionText {
-            color: #0066cc; /* Set a color for the prediction text */
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
@@ -50,27 +20,6 @@
         <img id="uploadedImage" alt="Uploaded Image" width=500px height=600px>
     </div>
 
-    <script>
-        function uploadAndPredict() {
-            var formData = new FormData($('#uploadForm')[0]);
-
-            $.ajax({
-                type: 'POST',
-                url: '/',  // Change this to the correct route
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (data) {
-                    // Update the prediction and image on the same page
-                    $('#predictionText').text('Prediction: ' + data.prediction);
-                    $('#uploadedImage').attr('src', 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\static\\uploads\\' + data.filename);
-                    $('#predictionResult').show();
-                },
-                error: function (error) {
-                    console.log('Error:', error);
-                }
-            });
-        }
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
