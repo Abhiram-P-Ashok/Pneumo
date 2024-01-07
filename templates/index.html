@@ -2,82 +2,75 @@
 <html data-bs-theme="light" lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/Back-To-Top.css">
-    <link rel="stylesheet" href="assets/css/Bold-BS4-Animated-Back-To-Top.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        #predictionResult {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #uploadedImage {
+            max-width: 100%; /* Ensure the image doesn't exceed its container width */
+            height: 100%;
+            border: 1px solid #ff7777; /* Add a border for clarity */
+            margin-top: 10px;
+        }
+
+        #predictionText {
+            color: #0066cc; /* Set a color for the prediction text */
+        }
+    </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-    <nav class="navbar navbar-expand-md fixed-top navbar-light" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#">PNEUMO</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link"><a class="nav-link active" data-bss-hover-animate="pulse" href="#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" data-bss-hover-animate="pulse" href="#download" style="border-radius: 0;">Upload</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" data-bss-hover-animate="pulse" href="#contact">contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="masthead" style="background-image:url('assets/img/intro-bg.jpg');">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading">PNEUMO</h1>
-                        <p class="intro-text">Unlock the Power of Respiratory Well-being with PNEUMO! Dive into a world of knowledge, prioritize your lung health, and join us on a captivating journey towards a pneumonia-free future. Together, let's breathe easier and live life to the fullest. Your path to vibrant health starts here!</p><a class="btn btn-link bounce animated btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="text-center content-section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>About PNEUMO</h2>
-                    <p>Welcome to <strong>PNEUMO</strong>, we're on a mission to demystify pneumonia, offering you a vibrant hub of information on its stages, symptoms, treatments, and preventative strategies. Empower yourself with insights, prioritize your respiratory health, and embark on a transformative journey towards a pneumonia-free future. Let's breathe freely and live life abundantly with <strong>PNEUMO</strong>!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center download-section content-section" id="download" style="background-image:url('assets/img/downloads-bg.jpg');">
-        <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <h1>GO BOLDLY</h1>
-                <p>Detecting pneumonia early is your ticket to resilience. Recognize the signs, seize control, and embark on your journey to recovery. Your body communicates—listen, act, and let early detection be the spark for your wellness journey. Face the challenge, armed with knowledge and determination. Cherish your health, protect it, and thrive.</p><button class="btn btn-primary btn-lg btn-default" type="button">UPLOAD THE X-Ray</button><button class="btn btn-primary btn-lg btn-default" type="button">PREDICT</button>
-            </div>
-        </div>
-    </section>
-    <section class="text-center content-section" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Contact us</h2>
-                    <p>We value your health and well-being! If you have any questions, concerns, or simply want to share your thoughts on respiratory health, feel free to reach out to us. Your feedback is vital in helping us provide the most accurate and helpful information. Our dedicated team is here to assist you on your journey to better health. Together, let's foster a community that prioritizes respiratory wellness. Contact us today, because your health matters, and we're here to support you every step of the way.</p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg github-button" type="button"><i class="fa fa-github fa-fw"></i><span class="network-name">&nbsp;github</span></button></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <p>Copyright ©&nbsp;Brand 2023</p><button id="topButton" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
-    </section>
-    <div class="map-clean"></div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/grayscale.js"></script>
-    <script src="assets/js/Back-To-Top-javascrip.js"></script>
-    <script src="assets/js/Bold-BS4-Animated-Back-To-Top-backtotop.js"></script>
-</body>
+    <h1>Pneumonia Detection</h1>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
+        <button type="button" onclick="uploadAndPredict()">Upload and Predict</button>
+    </form>
 
+    <div id="predictionResult">
+        <h2 id="predictionText"></h2>
+        <img id="uploadedImage" alt="Uploaded Image" width=500px height=600px>
+    </div>
+
+    <script>
+        function uploadAndPredict() {
+            var formData = new FormData($('#uploadForm')[0]);
+
+            $.ajax({
+                type: 'POST',
+                url: '/',  // Change this to the correct route
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    // Update the prediction and image on the same page
+                    $('#predictionText').text('Prediction: ' + data.prediction);
+                    $('#uploadedImage').attr('src', 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\static\\uploads\\' + data.filename);
+                    $('#predictionResult').show();
+                },
+                error: function (error) {
+                    console.log('Error:', error);
+                }
+            });
+        }
+    </script>
+</body>
 </html>
