@@ -1,4 +1,4 @@
-from util import classify, set_background
+from util import classify
 import os
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
@@ -10,33 +10,28 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load the model and other necessary configurations here
+
 def load_model():
-    # Load model architecture from JSON
-    #json_file_path = 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Dense_classifier.json'
     json_file_path = 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Pneumo\\Dense_classifier.json'
     json_file = open(json_file_path, 'r')
     loaded_model_json = json_file.read()
     json_file.close()
     loaded_model = model_from_json(loaded_model_json)
 
-    # Load weights into the model
-    #loaded_model.load_weights('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Dense_classifier_weights.h5')
     loaded_model.load_weights('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Pneumo\\Dense_classifier_weights.h5')
     return loaded_model
 
 class_names = ['Bacterial Pneumonia', 'Normal', 'Viral Pneumonia']
 model = load_model()
 
-# Function to preprocess the image for prediction
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(299, 299))
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
-    img_array = img_array / 255.0  # Normalize the image
+    img_array = img_array / 255.0
     return img_array
 
-# Function to make a prediction
+
 def predict_image(img_path):
     img_array = preprocess_image(img_path)
     predictions = model.predict(img_array)
@@ -57,10 +52,8 @@ def upload_file():
             filepath = os.path.join("static/uploads", filename)
             file.save(filepath)
 
-            # Perform prediction with the uploaded file
             predictions = predict_image(filepath)
 
-            # Get the class with the highest probability
             predicted_class = class_names[np.argmax(predictions)]
             class_probabilities = predictions[np.argmax(predictions)]
 
