@@ -8,11 +8,14 @@ function uploadAndPredict() {
         contentType: false,
         processData: false,
         success: function (data) {
+            console.log('Success Data:', data);
+        
             // Update the prediction and image on the same page
             $('#predictionText').text('Prediction: ' + data.prediction);
-            $('#uploadedImage').attr('src', 'C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\static\\uploads\\' + data.filename);
+            $('#uploadedImage').attr('src', '/static/uploads/' + data.filename);
             $('#predictionResult').show();
         },
+        
         error: function (error) {
             console.log('Error:', error);
         }
