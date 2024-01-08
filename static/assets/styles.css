@@ -26,3 +26,10 @@ form {
 #predictionText {
     color: #0066cc;
 }
+
+#download {
+    background-image: url('/static/assets/img/downloads-bg.jpg');
+}
+#masthead {
+    background-image: url('img/intro-bg.jpg');
+}
