@@ -10,6 +10,14 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/fonts/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/animate.min.css') }}">
+    <style>
+        #download {
+            background-image: url('/static/assets/img/downloads-bg.jpg');
+        }
+        #masthead {
+            background-image: url('static/assets/img/intro-bg.jpg');
+        }
+    </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
@@ -24,7 +32,7 @@
             </div>
         </div>
     </nav>
-    <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/intro-bg.jpg') }}');">
+    <header class="masthead" id="masthead">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -46,14 +54,14 @@
             </div>
         </div>
     </section>
-    <section class="text-center download-section content-section" id="download" style="background-image: url('{{ url_for('static', filename='assets/img/downloads-bg.jpg') }}');">
+    <section class="text-center download-section content-section" id="download">
         <div class="container">
             <div class="col-lg-8 mx-auto">
                 <h1>GO BOLDLY</h1>
                 <p>Detecting pneumonia early is your ticket to resilience. Recognize the signs, seize control, and embark on your journey to recovery. Your body communicates—listen, act, and let early detection be the spark for your wellness journey. Face the challenge, armed with knowledge and determination. Cherish your health, protect it, and thrive.</p>
                 <form id="uploadForm" method="POST" enctype="multipart/form-data">
-                    <button class="btn btn-primary btn-lg btn-default" type="button" onclick="uploadAndPredict()">PREDICT</button>
                     <input class="btn btn-primary btn-lg btn-default" type="file" name="file" accept=".jpg, .jpeg, .png" required>
+                    <button class="btn btn-primary btn-lg btn-default" type="button" onclick="uploadAndPredict()">PREDICT</button>
                 </form>
             
                 <div id="predictionResult">
