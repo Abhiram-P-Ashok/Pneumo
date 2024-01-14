@@ -5,11 +5,11 @@ import numpy as np
 import json
 
 def load_model():
-    with open('Dense_classifier.json', 'r') as json_file:
+    with open('Mobile_classifier.json', 'r') as json_file:
         model_json = json_file.read()
         model = tf.keras.models.model_from_json(model_json)
     
-    model.load_weights('Dense_classifier_weights.h5')
+    model.load_weights('Mobile_classifier_weights.h5')
     return model
 
 def preprocess_image(img_path):

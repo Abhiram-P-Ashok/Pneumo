@@ -1,5 +1,7 @@
 from util import classify
 import os
+import pathlib
+import textwrap
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from werkzeug.utils import secure_filename
 import json
@@ -7,18 +9,19 @@ from tensorflow import keras
 from keras.models import model_from_json
 from keras.preprocessing import image
 import numpy as np
+import google.generativeai as genai
 
 app = Flask(__name__)
 
 
 def load_model():
-    json_file_path = 'Dense_classifier.json'
+    json_file_path = 'Mobile_classifier.json'
     json_file = open(json_file_path, 'r')
     loaded_model_json = json_file.read()
     json_file.close()
     loaded_model = model_from_json(loaded_model_json)
 
-    loaded_model.load_weights('Dense_classifier_weights.h5')
+    loaded_model.load_weights('Mobile_classifier_weights.h5')
     return loaded_model
 
 class_names = ['Bacterial Pneumonia', 'Normal', 'Viral Pneumonia']
