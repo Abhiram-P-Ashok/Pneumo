@@ -9,7 +9,6 @@ from tensorflow import keras
 from keras.models import model_from_json
 from keras.preprocessing import image
 import numpy as np
-import google.generativeai as genai
 
 app = Flask(__name__)
 
