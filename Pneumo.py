@@ -33,7 +33,7 @@ class WebApp(QMainWindow):
 
     def execute_app_script(self):
         # Replace 'app.py' with the actual name of your Flask app script
-        script_path = os.path.abspath('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Pneumo\\app.py')
+        script_path = os.path.abspath('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia_detection\\project\\Pneumo\\app.py')
 
         # Execute the app.py script
         subprocess.Popen(['python', script_path], shell=True)
@@ -68,7 +68,7 @@ class WebApp(QMainWindow):
 
     def execute_app_script(self):
         # Replace 'app.py' with the actual name of your Flask app script
-        script_path = os.path.abspath('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia detection\\project\\Pneumo\\app.py')
+        script_path = os.path.abspath('C:\\Users\\PC\\OneDrive\\Desktop\\pneumonia_detection\\project\\Pneumo\\app.py')
 
         # Execute the app.py script
         subprocess.Popen(['python', script_path], shell=True)
