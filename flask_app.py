@@ -1,11 +1,6 @@
-from util import classify
 import os
-import pathlib
-import textwrap
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
-import json
-from tensorflow import keras
 from keras.models import model_from_json
 from keras.preprocessing import image
 import numpy as np
@@ -33,6 +28,13 @@ def preprocess_image(img_path):
     img_array = img_array / 255.0
     return img_array
 
+def classify(image_path):
+    model = load_model()
+    
+    img_array = preprocess_image(image_path)
+    
+    predictions = model.predict(img_array)
+    return predictions
 
 def predict_image(img_path):
     img_array = preprocess_image(img_path)
