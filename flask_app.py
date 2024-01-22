@@ -22,14 +22,6 @@ def load_model():
 class_names = ['Bacterial Pneumonia', 'Normal', 'Viral Pneumonia']
 model = load_model()
 
-def classify(image_path):
-    model = load_model()
-    
-    img_array = preprocess_image(image_path)
-    
-    predictions = model.predict(img_array)
-    return predictions
-
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(299, 299))
     img_array = image.img_to_array(img)
