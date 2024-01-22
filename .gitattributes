@@ -8,3 +8,4 @@ pneumo_app_cmd/build/Pneumo/Pneumo.pkg filter=lfs diff=lfs merge=lfs -text
 pneumo_app_cmd/dist/Pneumo.exe filter=lfs diff=lfs merge=lfs -text
 pneumo_app_non_cmd/build/Pneumo/Pneumo.exe filter=lfs diff=lfs merge=lfs -text
 pneumo_app_non_cmd/build/Pneumo/Pneumo.pkg filter=lfs diff=lfs merge=lfs -text
+pneumo_app_non_cmd/dist/Pneumo.exe filter=lfs diff=lfs merge=lfs -text
