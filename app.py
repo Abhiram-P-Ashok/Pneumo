@@ -1,4 +1,3 @@
-from util import classify
 import os
 import pathlib
 import textwrap
@@ -9,6 +8,7 @@ from tensorflow import keras
 from keras.models import model_from_json
 from keras.preprocessing import image
 import numpy as np
+import tensorflow as tf
 
 app = Flask(__name__)
 
@@ -25,6 +25,14 @@ def load_model():
 
 class_names = ['Bacterial Pneumonia', 'Normal', 'Viral Pneumonia']
 model = load_model()
+
+def classify(image_path):
+    model = load_model()
+    
+    img_array = preprocess_image(image_path)
+    
+    predictions = model.predict(img_array)
+    return predictions
 
 def preprocess_image(img_path):
     img = image.load_img(img_path, target_size=(299, 299))
