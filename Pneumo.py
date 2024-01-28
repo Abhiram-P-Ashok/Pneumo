@@ -1,4 +1,4 @@
-from PyQt5.QtCore import QUrl
+'''from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtWebEngineWidgets import QWebEngineView
@@ -21,9 +21,9 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = WebAppViewer()
     window.show()
-    sys.exit(app.exec_())
-    
-'''from PyQt5.QtCore import QUrl
+    sys.exit(app.exec_())'''
+
+from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtWebEngineWidgets import QWebEngineView
@@ -68,4 +68,3 @@ if __name__ == "__main__":
     QApplication.setApplicationName("Pneumo")  # Replace with your app name
     window = WebApp()
     app.exec_()
-'''
