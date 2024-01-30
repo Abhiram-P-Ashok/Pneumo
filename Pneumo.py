@@ -65,6 +65,6 @@ class WebApp(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    QApplication.setApplicationName("Pneumo")  # Replace with your app name
+    QApplication.setApplicationName("Pneumo")
     window = WebApp()
     app.exec_()

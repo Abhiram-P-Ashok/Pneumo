@@ -4,7 +4,6 @@ from werkzeug.utils import secure_filename
 from keras.models import model_from_json
 from keras.preprocessing import image
 import numpy as np
-import tensorflow as tf
 
 app = Flask(__name__)
 
